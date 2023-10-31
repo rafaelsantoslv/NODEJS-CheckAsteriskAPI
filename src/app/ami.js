@@ -62,15 +62,17 @@ handlePeerStatus(event) {
             if(!err) {
                 const {output} = response
                 const headers = output[0].split(/\s+/)
-                const peers = []
-                console.log(headers)
+                headers[0] = 'Name'
+                const peers = {}
+                
                 for(let i = 1; i < output.length; i++){
                     const row = output[i].split(/\s+/)
+                    // console.log(row)
                     const entry = {}
                     for(let j = 0; j < headers.length; j++){
                         entry[headers[j]] = row[j]
                     }
-                    peers.push(entry)
+                    peers[i] = entry
                     
                 }
                 
@@ -80,7 +82,7 @@ handlePeerStatus(event) {
             }
         })
     }
-    sip
+    
     
     
     

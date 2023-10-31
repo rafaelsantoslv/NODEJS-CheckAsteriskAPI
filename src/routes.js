@@ -1,5 +1,5 @@
 const express = require("express");
-const controller = require("./controller");
+const controller = require("./app/Controllers/controller");
 const routes = express.Router();
 
 
@@ -12,5 +12,6 @@ routes.post("/", (req, res) => {
 });
 
 routes.get("/sip", controller.SipShowPeers)
+// routes.get("/ramais", controller.SipShowPeers)
 
 module.exports = routes;

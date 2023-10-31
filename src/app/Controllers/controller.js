@@ -1,6 +1,5 @@
-const Ami = require('./ami')
+const Ami = require('../ami')
 const amiInstance = new Ami();
-const printRes = require('./functions');
 module.exports = {
     async SipShowPeers(req, res) {
         let data = {}
@@ -11,11 +10,9 @@ module.exports = {
                     message: err
                 })
             }else {
-                data.Peers = response
-                res.status(201).json({
-                    data
-                })
+                data.peers = response
+                res.status(202).json({data})
             }
-        }) 
+        })
     }
 }   

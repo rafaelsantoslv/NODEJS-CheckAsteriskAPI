@@ -1,7 +1,7 @@
 const express = require("express");
 const routes = require('./routes')
 const bodyParser = require("body-parser");
-const Ami = require('./ami')
+const Ami = require('./app/ami')
 
 
 
